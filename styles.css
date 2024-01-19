@@ -10,8 +10,8 @@
 --container-padding: 1em;
 --project-margins: 0 0 0 0;
 /* Typography */
---header-font: 'Merriweather', serif;
---body-font: 'Sarabun', sans-serif;
+--header-font: 'Press Start 2P', system-ui;
+--body-font: 'Open Sans', sans-serif;
 --h1-size: 4em;
 --h2-size: 2em;
 --p-size: 1.4em;
@@ -19,26 +19,26 @@
 --header-spacing: 0 0 0.4em 0;
 --inline-spacing: 0 0 1em 0;
 /* Colors */
---background: #2D2D2D;
---secondary-background:#EBF2FF;
---primary: #259AC9;
---secondary: #196A8A;
---nav-link: #ffffff;
---link:#259AC9;
+--background: #000000;
+--secondary-background:rgba(102, 255, 2, 0.2);
+--primary: #66FF02;
+--secondary: #317A00;
+--nav-link: var(--secondary);
+--link:var(--secondary);
 --white: #ffffff;
---black:#2D2D2D;
---gray: #f2f2f2;
+--black:#000000;
+--gray: #a5a5a5;
 /* Drop Shadow */
 --drop-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 /* Button variables */
 --btn-font-size: 1.1em;
 --btn-border-radius: 0.4em;
---btn-text:#ffffff;
+--btn-text:var(--black);
 --btn-font-weight:900;
 /* Keyword variables */
 --keyword-size: 0.8em;
 /* Border */
---border: 1px solid #f2f2f2;
+--border: 2px solid var(--primary);
 --border-radius: 1em;
 }
 
@@ -58,7 +58,8 @@
 }
 
 body {
-    color: var(--black);
+    color: var(--primary);
+    background-color: var(--background);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -74,6 +75,7 @@ body {
 /* Typographic styling */
 /* Fonts for headers */
 h1, h2 {
+    text-transform: uppercase;
     font-family: var(--header-font);
 }
 /* Fonts for body text */
@@ -84,7 +86,7 @@ p, a, li {
 h1 {
     font-size: var(--h1-size);
     margin: var(--header-spacing);
-    line-height: 1.2em;
+    line-height: 1.4em;
 }
 
 h2 {
@@ -105,10 +107,13 @@ li {
 a {
     color: var(--link);
     text-decoration: none;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
 }
 
 a:hover {
+    color: var(--primary);
     text-decoration: underline;
+    font-weight: 600;
 }
 /* Components */
 /* Image sizing */
@@ -118,7 +123,6 @@ img {
     object-fit: cover;
     margin: var(--inline-spacing);
 }
-/* NEEDS WORK */
 /* Button group */
 .button-group {
     display: flex;
@@ -126,11 +130,9 @@ img {
     gap: var(--gap);
     margin: var(--inline-spacing);
 }
-
 .button-group:last-child {
     margin:0;
 }
-/* NEEDS WORK */
 /* Button styling */
 button {
     width: 100%;
@@ -138,11 +140,9 @@ button {
     color: var(--btn-text);
     border: none;
     padding: 0.8em 1.6em;
-    border-radius: var(--btn-border-radius);
     font-size: var(--btn-font-size);
     font-weight: var(--btn-font-weight);
     cursor: pointer;
-    filter: drop-shadow(var(--drop-shadow));
 }
 
 button:hover {
@@ -167,15 +167,15 @@ button:focus {
 .keyword {
     border-radius: 0.2em;
     padding: 0 0.8em 0.2em 0.8em;
-    background-color: var(--gray);
+    background-color: var(--secondary-background);
     margin: 0;
-    color:var(--black);
+    color:var(--secondary);
     font-size: var(--keyword-size);
     font-weight: 100;
 }
 
 .keyword:hover {
-    background-color: var(--secondary-background);
+    background-color: var(--primary);
     color: var(--black);
     cursor: default;
 }
@@ -186,7 +186,18 @@ header, footer {
     display: flex;
     justify-content: center;
     padding: var(--header-footer-padding);
-    filter: drop-shadow(drop-shadow(var(--drop-shadow)));
+}
+
+header {
+    border-bottom: var(--border);
+}
+
+header p {
+    font-family: var(--header-font);
+}
+
+footer {
+    border-top: var(--border);
 }
 
 /* Spacing reset for header and footer */
@@ -197,6 +208,7 @@ header p, footer p {
 /* Styling for navigation links */
 header a, footer a {
     color: var(--nav-link);
+    font-family: var(--header-font);
 }
 
 /* Header and footer content spacing and alignment */
@@ -210,12 +222,14 @@ header a, footer a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20em;
+    width: 26em;
 }
 
 #nav-links a {
+    text-transform: uppercase;
     display: flex;
     align-items: center;
+    font-weight: 900;
 }
 
 /* Section styling */
@@ -225,7 +239,7 @@ section {
     display: flex;
     justify-content: center;
 }
-
+/* USE CONTAINER QUERY */
 #introduction > .section-content {
     display: flex;
     flex-direction: column;
@@ -233,9 +247,6 @@ section {
 
 #introduction > .section-content > div {
     display: flex;
-}
-#introduction > .section-content > div > p {
-    width: 46%;
 }
 
 #introduction > .section-content > div > p:first-child {
@@ -246,17 +257,10 @@ section {
 section p:last-child {
     margin: 0 0 0 0;
 }
-/* NEEDS WORK */
-/* Alternating section backgrounds */
-section:nth-child(even), header, footer {
-    background-color: var(--background);
-    color: var(--white);
-}
-/* NEEDS WORK */
+/* USE CONTAINER QUERY */
 .focus-box {
     display: flex;
     flex-wrap: wrap;
-    filter: drop-shadow(var(--drop-shadow));
 }
 
 .focus-box p, ul {
@@ -272,40 +276,30 @@ section:nth-child(even), header, footer {
 
 .focus-column {
     border: var(--border);
-    background-color: var(--white);
-    color:var(--black);
+    background-color: var(--secondary-background);
+    color:var(--primary);
     padding: var(--container-padding);
     min-width: 14em;
-    border-radius: var(--border-radius);
 }
 
 .focus-column h2 {
-    font-weight:900;
+    font-weight: 900;
     font-size: 1.2em;
     margin:0 0 0.4em 0;
 }
 
-.focus-column:first-child {
-    border-radius: 1em 0 0 1em;
-}
-
-.focus-column:last-child {
-    border-radius: 0 1em 1em 0;
-}
-/* NEEDS WORK */
 .project-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
 }
+/* USE CONTAINER QUERY */
 .project {
     border: var(--border);
-    background-color: #ffffff;
-    color: var(--black);
+    background-color: var(--background);
+    color: var(--primary);
     width: 46%;
-    border-radius: var(--border-radius);
     margin: var(--project-margins);
-    filter: drop-shadow(var(--drop-shadow));
 }
 
 .project-content {    
@@ -313,18 +307,16 @@ section:nth-child(even), header, footer {
 }
 
 .project > h2 {
-    border-radius: 0.9rem 0.9rem 0 0;
     margin: 0;
     padding: 1rem;
     color: var(--black);
-    background-color: var(--gray);
+    background-color: var(--primary);
 }
 
 .project > .project-content > p {
     font-size: 1em;
 }
 
-/* HIGHLIGHTS NEED WORK */
 /* Fixes for highlights list styling */
 .project li {
     margin: 0 0 0.2em 1em;
@@ -339,6 +331,10 @@ section:nth-child(even), header, footer {
 }
 .project > .project-content > .focus-column h2 {
     font-size: 1em;
+}
+
+.project > .project-content > .focus-column h2, li {
+    filter: drop-shadow(var(--drop-shadow));
 }
 
 .project > .focus-column:last-child {
@@ -358,12 +354,14 @@ section:nth-child(even), header, footer {
 
 /* Animations */
 #loading {
+    text-transform: uppercase;
+    font-family: var(--header-font);
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    color: #ffffff;
-    background-color: #2D2D2D;
+    color: var(--primary);
+    background-color: var(--background);
     z-index: 1000;
     height: 100vh;
     width: 100vw;
@@ -452,18 +450,11 @@ section:nth-child(even), header, footer {
         width: 100vw;
     }
 
-    .focus-column:first-child, .focus-column:last-child {
-        border-radius: 1em;
-    }
-
     .focus-column:first-child {
         --inline-spacing: 0 0 1em 0;
         margin: var(--inline-spacing);
     }
 
-    .project .focus-column {
-        border-radius: 0em;
-    }
 }
 
 /* For Tablets */
@@ -478,6 +469,10 @@ section:nth-child(even), header, footer {
 
     p {
         --p-size: 1.1em;
+    }
+
+    #nav-links {
+        font-size: 0.8em;
     }
     
     #header-content, #footer-content, .section-content {
@@ -509,13 +504,6 @@ section:nth-child(even), header, footer {
         width: 100vw;
     }
 
-    .mobile-visible {
-        display: inline !important;
-    }
-
-    .mobile-hidden {
-        display: none !important;
-    }
 }
 
 /* For Desktop */
