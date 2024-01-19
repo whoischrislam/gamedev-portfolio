@@ -75,6 +75,7 @@ body {
 /* Typographic styling */
 /* Fonts for headers */
 h1, h2 {
+    word-spacing: -0.6em;
     text-transform: uppercase;
     font-family: var(--header-font);
 }
@@ -365,15 +366,6 @@ section p:last-child {
     animation-delay: 0.2s;
 }
 
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }    
-}
-
 #loading {
     text-transform: uppercase;
     font-family: var(--header-font);
@@ -412,6 +404,15 @@ section p:last-child {
 }
 
 /* Types of animations */
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }    
+}
+
 @keyframes moveright {
     0% {
         transform: translateX(-15%);
