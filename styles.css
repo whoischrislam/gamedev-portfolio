@@ -1,5 +1,6 @@
 /* CSS Variables */
 :root {
+--n: 14;
 /* Sizing */
 --page-width: 80vw;
 --page-height: 100%;
@@ -353,6 +354,7 @@ section p:last-child {
     animation: slideup 1s ease 1 forwards;
 }
 
+
 /* Animations */
 #blink-1 {
     animation: blink 0.5s ease infinite forwards;
@@ -364,6 +366,31 @@ section p:last-child {
 #blink-3 {
     animation: blink 0.5s ease infinite forwards;
     animation-delay: 0.2s;
+}
+
+#introduction > div > h1 {
+    opacity: 0;
+    overflow: hidden;
+}
+
+#introduction > div > h1:first-child {
+    animation: type 1s ease 1 forwards;
+    animation-delay: 2.2s;
+}
+
+#introduction > div > h1:nth-child(2) {
+    animation: type 1s ease 1 forwards;
+    animation-delay: 4s;
+}
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
 }
 
 #loading {
@@ -384,23 +411,16 @@ section p:last-child {
     filter: drop-shadow(var(--drop-shadow));
 }
 
-#animation-intro {
-    opacity: 0;
-    animation: moveright 1s ease 1,
-    appear 1s ease 1 forwards;
-    animation-delay: 2s;
-}
-
 #animation-intro-p1 {
-    animation-delay: 3s;
+    animation-delay: 5s;
 }
 
 #animation-intro-p2 {
-    animation-delay: 3.2s;
+    animation-delay: 5.2s;
 }
 
 #skills, #tldr, #featured-work, #other-work, #side-projects {
-    animation-delay: 3.4s;
+    animation-delay: 5.4s;
 }
 
 /* Types of animations */
