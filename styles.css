@@ -415,3 +415,111 @@ section p:last-child {
         display: none;
     }    
 }
+
+/* Media queries */
+/* Desktop */
+.mobile-visible {
+    display: none;
+}
+
+/* For Mobile */
+@media only screen and (max-width: 480px) {
+    #header-content, #footer-content, .section-content {
+        --page-width: 90vw;
+    }
+    /* NEEDS WORK ON MOBILE VERSION MENU */
+    header, footer {
+        width: 100vw;
+        padding: 1em 0;
+    }
+    /* NEEDS WORK TO HAVE LOGO INSTEAD OF NAME */
+    header p, footer p {
+        display: none;
+    }
+
+    section {
+        --section-padding: 2em 0;
+    }
+    .focus-box {
+        justify-content: center;
+    }
+
+    .focus-column {
+        width: 100vw;
+    }
+
+    .focus-column:first-child, .focus-column:last-child {
+        border-radius: 1em;
+    }
+
+    .focus-column:first-child {
+        --inline-spacing: 0 0 1em 0;
+        margin: var(--inline-spacing);
+    }
+
+    .project .focus-column {
+        border-radius: 0em;
+    }
+}
+
+/* For Tablets */
+@media only screen and (max-width: 768px) {
+    h1 {
+        --h1-size: 2em;
+    }
+
+    h2 {
+        --h2-size: 1.4em;
+    }
+
+    p {
+        --p-size: 1.1em;
+    }
+    
+    #header-content, #footer-content, .section-content {
+        --page-width: 90vw;
+    }
+
+    header, footer {
+        width: 100vw;
+        padding: 1em 0;
+    }
+
+    section {
+        --section-padding: 2em 0;
+    }
+
+    #introduction > .section-content > div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #introduction > .section-content > div > p:first-child {
+        margin: 0 0 1em 0;
+    }
+
+    #introduction > .section-content > div > p {
+        width: 100%;
+    }
+
+    .project {
+        width: 100vw;
+    }
+
+    .mobile-visible {
+        display: inline !important;
+    }
+
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+/* For Desktop */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    #header-content, #footer-content, .section-content {
+        --page-width: 90vw;
+    }
+    .project {
+        width: 46%;
+    }
+}
