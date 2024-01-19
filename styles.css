@@ -374,12 +374,12 @@ section p:last-child {
 }
 
 #introduction > div > h1:first-child {
-    animation: type 1s ease 1 forwards;
+    animation: type 1s ease-in 1 forwards;
     animation-delay: 2.2s;
 }
 
 #introduction > div > h1:nth-child(2) {
-    animation: type 1s ease 1 forwards;
+    animation: type 1.5s ease-in 1 forwards;
     animation-delay: 4s;
 }
 
