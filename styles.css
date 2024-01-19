@@ -353,7 +353,9 @@ section p:last-child {
 }
 
 /* Animations */
-/* #loading {
+#loading {
+    text-transform: uppercase;
+    font-family: var(--header-font);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -385,7 +387,7 @@ section p:last-child {
 
 #skills, #tldr, #featured-work, #other-work, #side-projects {
     animation-delay: 3.4s;
-} */
+}
 
 /* Types of animations */
 @keyframes moveright {
@@ -448,18 +450,11 @@ section p:last-child {
         width: 100vw;
     }
 
-    .focus-column:first-child, .focus-column:last-child {
-        border-radius: 1em;
-    }
-
     .focus-column:first-child {
         --inline-spacing: 0 0 1em 0;
         margin: var(--inline-spacing);
     }
 
-    .project .focus-column {
-        border-radius: 0em;
-    }
 }
 
 /* For Tablets */
@@ -474,6 +469,10 @@ section p:last-child {
 
     p {
         --p-size: 1.1em;
+    }
+
+    #nav-links {
+        font-size: 0.8em;
     }
     
     #header-content, #footer-content, .section-content {
@@ -505,13 +504,6 @@ section p:last-child {
         width: 100vw;
     }
 
-    .mobile-visible {
-        display: inline !important;
-    }
-
-    .mobile-hidden {
-        display: none !important;
-    }
 }
 
 /* For Desktop */
