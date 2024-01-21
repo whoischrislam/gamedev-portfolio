@@ -2,7 +2,7 @@
 :root {
 --n: 14;
 /* Sizing */
---page-width: 80vw;
+--page-width: 60vw;
 --page-height: 100%;
 /* Spacing */
 --gap: 0.4em 0.4em;
@@ -13,9 +13,9 @@
 /* Typography */
 --header-font: 'Press Start 2P', system-ui;
 --body-font: 'Open Sans', sans-serif;
---h1-size: 4em;
---h2-size: 2em;
---p-size: 1.4em;
+--h1-size: 3em;
+--h2-size: 1.5em;
+--p-size: 1.5em;
 --highlight-size: 1em;
 --header-spacing: 0 0 0.4em 0;
 --inline-spacing: 0 0 1em 0;
@@ -108,6 +108,7 @@ li {
 }
 
 a {
+    font-weight: 700;
     color: var(--link);
     text-decoration: none;
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
@@ -121,13 +122,13 @@ a:hover {
 /* Components */
 /* Image sizing */
 img {
-    height:100%;
     width:100%;
     object-fit: cover;
     margin: var(--inline-spacing);
 }
 /* Button group */
 .button-group {
+    padding: var(--container-padding);
     display: flex;
     flex-direction: column;
     gap: var(--gap);
@@ -242,28 +243,14 @@ section {
     display: flex;
     justify-content: center;
 }
-/* USE CONTAINER QUERY */
 #introduction > .section-content {
-    display: flex;
-    flex-direction: column;
+    container-type: inline-size;
+    container-name: intro-text;
 }
 
-#introduction > .section-content > div {
-    display: flex;
-}
-
-#introduction > .section-content > div > p:first-child {
-    margin: 0 1em 0 0;
-}
-
-/* Fix for last p in section */
-section p:last-child {
-    margin: 0 0 0 0;
-}
-/* USE CONTAINER QUERY */
-.focus-box {
-    display: flex;
-    flex-wrap: wrap;
+#skills > .section-content {
+    container-type: inline-size;
+    container-name: skills;
 }
 
 .focus-box p, ul {
@@ -283,6 +270,7 @@ section p:last-child {
     color:var(--primary);
     padding: var(--container-padding);
     min-width: 14em;
+    margin: var(--inline-spacing);
 }
 
 .focus-column h2 {
@@ -291,32 +279,32 @@ section p:last-child {
     margin:0 0 0.4em 0;
 }
 
-.project-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
+#side-projects > .section-content, #featured-work > .section-content {
+    container-type: inline-size;
+    container-name: projects;
 }
-/* USE CONTAINER QUERY */
+
 .project {
+    display: flex;
+    flex-direction: column;
     border: var(--border);
     background-color: var(--background);
     color: var(--primary);
-    width: 46%;
-    margin: var(--project-margins);
+    margin: var(--project-margins);    
 }
 
 .project-content {    
     padding: var(--container-padding);
 }
 
-.project > h2 {
+.project > .project-information > h2 {
     margin: 0;
     padding: 1rem;
     color: var(--black);
     background-color: var(--primary);
 }
 
-.project > .project-content > p {
+.project > .project-information > .project-content > p {
     font-size: 1em;
 }
 
@@ -324,24 +312,19 @@ section p:last-child {
 .project li {
     margin: 0 0 0.2em 1em;
 }
+
+/* REFACTOR HIGHLIGHTS instead of it inheriting from focus */
 /* Highlights styling */
-.project > .project-content > .focus-column {
+.project > .project-information > .project-content > .focus-column {
     margin: var(--inline-spacing);
     width: 100%;
     border-radius: 0em;
     background-color: var(--secondary-background);
     border: none;
 }
-.project > .project-content > .focus-column h2 {
-    font-size: 1em;
-}
 
-.project > .project-content > .focus-column h2, li {
+.project > .project-information > .project-content > .focus-column h2, li {
     filter: drop-shadow(var(--drop-shadow));
-}
-
-.project > .focus-column:last-child {
-    margin: 0;
 }
 
 /* Animation */
@@ -357,7 +340,7 @@ section p:last-child {
 
 
 /* Animations */
-/* 
+ 
 .read-progress {
     height:0.2em;
     position: fixed;
@@ -440,7 +423,7 @@ section p:last-child {
 
 #skills, #tldr, #featured-work, #other-work, #side-projects {
     animation-delay: 5.4s;
-} */
+}
 
 /* Types of animations */
 @keyframes blink {
@@ -482,45 +465,36 @@ section p:last-child {
 
 /* Media queries
 /* Desktop */
-/* .mobile-visible {
+.mobile-visible {
     display: none;
-} */
+}
 
 /* For Mobile */
-/* @media only screen and (max-width: 480px) {
+@media only screen and (width <= 480px) {
     #header-content, #footer-content, .section-content {
         --page-width: 90vw;
     }
     /* NEEDS WORK ON MOBILE VERSION MENU */
-    /* header, footer {
+    header, footer {
         width: 100vw;
         padding: 1em 0;
-    } */
+    }
     /* NEEDS WORK TO HAVE LOGO INSTEAD OF NAME */
-    /* header p, footer p {
-        display: none; */
-    /* } */
-/* 
+        header p, footer p {
+        display: none;
+     } 
+}
+
+/* For Tablets */
+@media only screen and (width <= 768px) {
+    #header-content, #footer-content, .section-content {
+        --page-width: 90vw;
+    }
+
     section {
         --section-padding: 2em 0;
     }
-    .focus-box {
-        justify-content: center;
-    }
-
-    .focus-column {
-        width: 100vw;
-    }
-
-    .focus-column:first-child {
-        --inline-spacing: 0 0 1em 0;
-        margin: var(--inline-spacing);
-    }
-
-} */
-
-/* For Tablets */
-/* @media only screen and (max-width: 768px) {
+    
     h1 {
         --h1-size: 2em;
     }
@@ -532,48 +506,76 @@ section p:last-child {
     p {
         --p-size: 1.1em;
     }
-
-    #nav-links {
+    
+    #nav-links a {
         font-size: 0.8em;
     }
-    
-    #header-content, #footer-content, .section-content {
-        --page-width: 90vw;
-    }
-
-    header, footer {
-        width: 100vw;
-        padding: 1em 0;
-    }
-
-    section {
-        --section-padding: 2em 0;
-    }
-
-    #introduction > .section-content > div {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #introduction > .section-content > div > p:first-child {
-        margin: 0 0 1em 0;
-    }
-
-    #introduction > .section-content > div > p {
-        width: 100%;
-    }
-
-    .project {
-        width: 100vw;
-    }
-
-} */
+}
 
 /* For Desktop */
-/* @media only screen and (min-width: 769px) and (max-width: 992px) {
+@media only screen and (min-width: 769px) {
     #header-content, #footer-content, .section-content {
-        --page-width: 90vw;
+        --page-width: 80vw;
     }
+}
+
+/* Container queries */
+@container intro-text (min-width: 926px) {
+    /* Intro text becomes two columns */
+    #introduction > .section-content > div {
+        display: flex;
+    }
+    /* Column spacing */
+    #introduction > .section-content > div > p:first-child {
+        margin: 0 1em 0 0;
+    }
+}
+
+@container skills (min-width: 477px) {
+    /* Skills are in a row if screen size is bigger */
+    .focus-box {
+        display: flex;
+        flex-direction: row;
+    }
+    /* Fixing spacing when skills are in a row */
+    .focus-column {
+        margin: 0;
+    }    
+}
+
+@container projects (width < 894px) {
     .project {
-        width: 46%;
+        margin: 0 0 2em 0;
     }
-} */
+
+    .project:last-child {
+        margin: 0;
+    }
+}
+
+@container projects (width > 893px) {
+    /* Multiple projects in a row if screen size is bigger */
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .project {
+        justify-content: space-between;
+        width: 32%;
+    }
+}
+
+@container projects (width > 594px) and (width <= 893px) {
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .project {
+        justify-content: space-between;
+        width: 48%;
+    }
+}
