@@ -470,7 +470,7 @@ section {
 }
 
 /* For Mobile */
-@media only screen and (width <= 480px) {
+@media only screen and (max-width: 480px) {
     #header-content, #footer-content, .section-content {
         --page-width: 90vw;
     }
@@ -486,7 +486,7 @@ section {
 }
 
 /* For Tablets */
-@media only screen and (width <= 768px) {
+@media only screen and (max-width: 768px) {
     #header-content, #footer-content, .section-content {
         --page-width: 90vw;
     }
