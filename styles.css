@@ -357,7 +357,7 @@ section p:last-child {
 
 
 /* Animations */
-
+/* 
 .read-progress {
     height:0.2em;
     position: fixed;
@@ -440,7 +440,7 @@ section p:last-child {
 
 #skills, #tldr, #featured-work, #other-work, #side-projects {
     animation-delay: 5.4s;
-}
+} */
 
 /* Types of animations */
 @keyframes blink {
@@ -480,27 +480,27 @@ section p:last-child {
     }    
 }
 
-/* Media queries */
+/* Media queries
 /* Desktop */
-.mobile-visible {
+/* .mobile-visible {
     display: none;
-}
+} */
 
 /* For Mobile */
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
     #header-content, #footer-content, .section-content {
         --page-width: 90vw;
     }
     /* NEEDS WORK ON MOBILE VERSION MENU */
-    header, footer {
+    /* header, footer {
         width: 100vw;
         padding: 1em 0;
-    }
+    } */
     /* NEEDS WORK TO HAVE LOGO INSTEAD OF NAME */
-    header p, footer p {
-        display: none;
-    }
-
+    /* header p, footer p {
+        display: none; */
+    /* } */
+/* 
     section {
         --section-padding: 2em 0;
     }
@@ -517,10 +517,10 @@ section p:last-child {
         margin: var(--inline-spacing);
     }
 
-}
+} */
 
 /* For Tablets */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
     h1 {
         --h1-size: 2em;
     }
@@ -566,14 +566,14 @@ section p:last-child {
         width: 100vw;
     }
 
-}
+} */
 
 /* For Desktop */
-@media only screen and (min-width: 769px) and (max-width: 992px) {
+/* @media only screen and (min-width: 769px) and (max-width: 992px) {
     #header-content, #footer-content, .section-content {
         --page-width: 90vw;
     }
     .project {
         width: 46%;
     }
-}
+} */
