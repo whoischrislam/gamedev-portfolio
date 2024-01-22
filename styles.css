@@ -282,10 +282,6 @@ section {
     margin: 0 0 0.2em 0;
 }
 
-.focus-box .focus-column {
-    opacity: 0;
-}
-
 .focus-column {
     border: var(--border);
     background-color: var(--secondary-background);
@@ -307,7 +303,6 @@ section {
 }
 
 .project {
-    opacity: 0;
     display: flex;
     flex-direction: column;
     border: var(--border);
@@ -367,20 +362,21 @@ section {
 
 
 /* Animations */
+
+/* Prime for animation */
+.section-content, .focus-box .focus-column, .project {
+    opacity: 0;
+} 
+
  /* Scroll */
-.focus-box .focus-column {
+.section-content, .focus-box .focus-column, .project {
     animation: moveright ease-out 1 forwards,
     appear ease-out 1 forwards;
     animation-timeline: view();
-    animation-range: 40vh 60vh;
+    animation-range: 20vh 70vh;
 }
 
-.project {
-    animation: moveright ease-out 1 forwards,
-    appear ease-out 1 forwards;
-    animation-timeline: view();
-    animation-range: 30vh 60vh;
-}
+
 
 @keyframes scroll-show {
     0% {
@@ -422,7 +418,7 @@ section {
     animation-delay: 0.2s;
 }
 
-/* #introduction > div > h1 {
+#introduction > div > h1 {
     opacity: 0;
     overflow: hidden;
 }
@@ -435,7 +431,7 @@ section {
 #introduction > div > h1:nth-child(2) {
     animation: type 1.5s ease-in 1 forwards;
     animation-delay: 4s;
-} */
+}
 
 @keyframes type {
     0% {
@@ -447,7 +443,7 @@ section {
     }
 }
 
-/* #loading {
+#loading {
     text-transform: uppercase;
     font-family: var(--header-font);
     font-size: var(--h2-size);
@@ -473,9 +469,9 @@ section {
     animation-delay: 5.2s;
 }
 
-#skills, #tldr, #featured-work, #other-work, #side-projects {
+#skills {
     animation-delay: 5.4s;
-} */
+}
 
 /* Types of animations */
 @keyframes blink {
