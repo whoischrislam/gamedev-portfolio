@@ -368,26 +368,6 @@ section {
     opacity: 0;
 } 
 
- /* Scroll */
-.section-content, .focus-box .focus-column, .project {
-    animation: moveright ease-out 1 forwards,
-    appear ease-out 1 forwards;
-    animation-timeline: view();
-    animation-range: 20vh 70vh;
-}
-
-
-
-@keyframes scroll-show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
  /* Page progress scroll */
 .read-progress {
     height:0.2em;
@@ -513,9 +493,16 @@ section {
 
 /* Media queries */
 @media (prefers-reduced-motion: no-preference) {
-   * {
-        scroll-behavior: smooth;
-   }
+    * {
+            scroll-behavior: smooth;
+    }
+    /* Scroll */
+    .section-content, .focus-box .focus-column, .project {
+        animation: moveright ease-out 1 forwards,
+        appear ease-out 1 forwards;
+        animation-timeline: view();
+        animation-range: 20vh 70vh;
+    }
 }
 
 /* For Mobile */
