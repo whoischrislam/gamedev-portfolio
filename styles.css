@@ -399,7 +399,7 @@ section {
     animation-delay: 0.2s;
 }
 
-/* #introduction > div > h1 {
+#introduction > div > h1 {
     opacity: 0;
     overflow: hidden;
 }
@@ -412,7 +412,7 @@ section {
 #introduction > div > h1:nth-child(2) {
     animation: type 1.5s ease-in 1 forwards;
     animation-delay: 4s;
-} */
+}
 
 @keyframes type {
     0% {
@@ -424,7 +424,7 @@ section {
     }
 }
 
-/* #loading {
+#loading {
     text-transform: uppercase;
     font-family: var(--header-font);
     font-size: var(--h2-size);
@@ -452,7 +452,7 @@ section {
 
 #skills {
     animation-delay: 5.4s;
-} */
+}
 
 /* Types of animations */
 @keyframes blink {
@@ -625,6 +625,7 @@ section {
 
 /* Timeline styling */
 .timeline-container {
+    margin: 0 0 1em 0;
     display: flex;
     align-items: center;
     overflow-x: scroll;
