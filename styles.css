@@ -363,11 +363,6 @@ section {
 
 /* Animations */
 
-/* Prime for animation */
-.section-content, .focus-box .focus-column, .project {
-    opacity: 0;
-} 
-
  /* Page progress scroll */
 .read-progress {
     height:0.2em;
@@ -493,11 +488,17 @@ section {
 
 /* Media queries */
 @media (prefers-reduced-motion: no-preference) {
+    /* Prime for animation */
+    #side-projects .section-content, #featured-work .section-content, .focus-box .focus-column, .project {
+        opacity: 0;
+    } 
+    
     * {
-            scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
+
     /* Scroll */
-    .section-content, .focus-box .focus-column, .project {
+    .focus-box .focus-column, .project, #side-projects .section-content, #featured-work .section-content {
         animation: moveright ease-out 1 forwards,
         appear ease-out 1 forwards;
         animation-timeline: view();
