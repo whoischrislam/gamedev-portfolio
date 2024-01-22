@@ -9,7 +9,7 @@
 --header-footer-padding: 1.6em 0;
 --section-padding: 4em 0;
 --container-padding: 1em;
---project-margins: 0 0 0 0;
+--project-margins: 0 0 2em 0;
 /* Typography */
 --header-font: 'Press Start 2P', system-ui;
 --body-font: 'Open Sans', sans-serif;
@@ -204,6 +204,8 @@ footer {
     border-top: var(--border);
 }
 
+
+
 /* Spacing reset for header and footer */
 header p, footer p {
     margin: 0;
@@ -216,10 +218,27 @@ header a, footer a {
 }
 
 /* Header and footer content spacing and alignment */
+
 #header-content, #footer-content {
     display: flex;
     justify-content: space-between;
+}
+
+#header-content {
     align-items: center;
+}
+
+#footer-content {
+    flex-direction: column;
+    gap: 1em;
+}
+
+#footer-content p {
+    font-size: var(--keyword-size);
+}
+
+#footer-content > div > p:first-child {
+    margin: 0 0 1em 0;
 }
 
 #nav-links {
@@ -291,6 +310,10 @@ section {
     background-color: var(--background);
     color: var(--primary);
     margin: var(--project-margins);    
+}
+
+.project-container {
+    gap: 1em;
 }
 
 .project-content {    
@@ -375,7 +398,7 @@ section {
     overflow: hidden;
 }
 
-#introduction > div > h1:first-child {
+/* #introduction > div > h1:first-child {
     animation: type 1s ease-in 1 forwards;
     animation-delay: 2.2s;
 }
@@ -383,7 +406,7 @@ section {
 #introduction > div > h1:nth-child(2) {
     animation: type 1.5s ease-in 1 forwards;
     animation-delay: 4s;
-}
+} */
 
 @keyframes type {
     0% {
@@ -395,7 +418,7 @@ section {
     }
 }
 
-#loading {
+/* #loading {
     text-transform: uppercase;
     font-family: var(--header-font);
     font-size: var(--h2-size);
@@ -423,7 +446,7 @@ section {
 
 #skills, #tldr, #featured-work, #other-work, #side-projects {
     animation-delay: 5.4s;
-}
+} */
 
 /* Types of animations */
 @keyframes blink {
@@ -480,9 +503,19 @@ section {
         padding: 1em 0;
     }
     /* NEEDS WORK TO HAVE LOGO INSTEAD OF NAME */
-        header p, footer p {
+        header p {
         display: none;
-     } 
+     }
+     
+    #nav-links {
+        width: 100%;
+    }
+}
+
+@media only screen and (width > 660px) {
+    .project {
+        --project-margins: 0 0 0 0;
+    }
 }
 
 /* For Tablets */
@@ -543,22 +576,11 @@ section {
     }    
 }
 
-@container projects (width < 894px) {
-    .project {
-        margin: 0 0 2em 0;
-    }
-
-    .project:last-child {
-        margin: 0;
-    }
-}
-
 @container projects (width > 893px) {
     /* Multiple projects in a row if screen size is bigger */
     .project-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 1em;
     }
 
     .project {
