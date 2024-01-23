@@ -399,7 +399,7 @@ section {
     animation-delay: 0.2s;
 }
 
-#introduction > div > h1 {
+/* #introduction > div > h1 {
     opacity: 0;
     overflow: hidden;
 }
@@ -412,7 +412,7 @@ section {
 #introduction > div > h1:nth-child(2) {
     animation: type 1.5s ease-in 1 forwards;
     animation-delay: 4s;
-}
+} */
 
 @keyframes type {
     0% {
@@ -424,7 +424,7 @@ section {
     }
 }
 
-#loading {
+/* #loading {
     text-transform: uppercase;
     font-family: var(--header-font);
     font-size: var(--h2-size);
@@ -452,7 +452,7 @@ section {
 
 #skills {
     animation-delay: 5.4s;
-}
+} */
 
 /* Types of animations */
 @keyframes blink {
@@ -624,127 +624,3 @@ section {
 
 
 /* Timeline styling */
-.timeline-container {
-    margin: 0 0 1em 0;
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    border: var(--border);
-    width: 100%;
-    height: 20em;
-    background-color:var(--secondary-background);
-}
-
-#timeline-elements {
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 0 1em;
-}
-
-#timeline-elements p {
-    font-size: 0.8em;
-    text-transform: uppercase;
-}
-
-.milestone {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    bottom: 3.4em;
-}
-
-.milestone-text {
-    position:relative;
-    bottom: 2em;
-    left: 1em;
-}
-
-.reverse-milestone-text {
-    position:relative;
-    top: 8.3em;
-    left: 1em;
-}
-
-.vertical-line {
-    width: 0.1em;
-    height: 100%;
-    background-color: var(--primary);
-    position: absolute;
-    bottom: 1.8em;
-    left: 0.7em;
-    z-index: -100;
-}
-
-.reverse-vertical-line {
-    width: 0.1em;
-    height: 100%;
-    background-color: var(--primary);
-    position: absolute;
-    top: 7.5em;
-    left: 0.7em;
-    z-index: -100;
-}
-
-#timeline-line {
-    background-color: var(--primary);
-    width: 99%;
-    height: 0.2em;
-    position:absolute;
-    z-index: -100;
-}
-
-.timeline-content {
-    gap: 1em;
-    display: flex;
-    width:fit-content;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 0.4em;
-    padding: 0.5em 0.5em;
-}
-
-.timeline-container img {
-    width: 5em;
-    margin: 0;
-    height: 2em;
-    object-fit:contain;
-}
-
-.timeline-container h3 {
-    font-size: 1em;
-    margin: 0.2em;
-}
-
-.timeline-container p {
-    font-size: 0.8em;
-    margin: 0;
-}
-
-.timeline-point, #timeline-current-point {
-    width: 1.5em;
-    height: 1.5em;
-    display: flex;
-    justify-content: center;
-}
-
-.timeline-point {
-    border-radius: 50%;
-    background-color: var(--primary);
-}
-
-.timeline-point i {
-    color: black;
-}
-
-#timeline-current-point {
-    position: relative;
-    top: 2em;
-    border-radius: 50%;
-    border: 0.1em solid var(--primary);
-    border-style: dashed;
-    background-color: var(--secondary-background);
-}
