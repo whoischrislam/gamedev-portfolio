@@ -639,6 +639,23 @@ section {
     gap: var(--gap);
 }
 
+.timeline-container::-webkit-scrollbar {
+    width: 2em;
+    height: 2em;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+}
+
+.timeline-container::-webkit-scrollbar-track {
+    background-color: var(--secondary-background);
+}
+
+/* .timeline-container::-webkit-scrollbar-button:horizontal:start{
+    background-color: var(--primary);
+} */
+
 .moment {
     width: 100%;
     padding: 2em;
