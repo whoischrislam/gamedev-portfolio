@@ -95,6 +95,7 @@ h1 {
 h2 {
     font-size: var(--h2-size);
     margin: var(--header-spacing);
+    line-height: 1.4em;
 }
 
 h3 {
@@ -131,6 +132,11 @@ img {
     object-fit: cover;
     margin: var(--inline-spacing);
 }
+
+img.svg {
+    width: 50%;
+}
+
 /* Button group */
 .button-group {
     padding: var(--container-padding);
@@ -624,3 +630,21 @@ section {
 
 
 /* Timeline styling */
+.timeline-container {
+    margin: var(--inline-spacing);
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: var(--gap);
+}
+
+.moment {
+    width: 100%;
+    padding: 2em;
+    background-color: var(--secondary-background);
+}
+
+.moment p {
+    font-size: var(--highlight-size);
+}
