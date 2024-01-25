@@ -125,17 +125,26 @@ a:hover {
     text-decoration: underline;
     font-weight: 600;
 }
+
+.caption {
+    font-family: var(--header-font);
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+#konami-code {
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 1.5em;
+    display: inline-block;
+}
+
 /* Components */
 /* Image styling */
 img {
     width:100%;
     object-fit: cover;
     margin: var(--inline-spacing);
-    filter: grayscale(100%);
-}
-
-img:hover {
-    filter: grayscale(0%);
 }
 
 img.svg {
@@ -334,6 +343,15 @@ section {
     background-color: var(--background);
     color: var(--primary);
     margin: var(--project-margins);    
+}
+
+.project img {
+    filter: grayscale(100%);
+}
+
+
+.project img:hover {
+    filter: grayscale(0%);
 }
 
 .project-container {
@@ -590,6 +608,11 @@ section {
     #nav-links a {
         font-size: 0.8em;
     }
+    
+    .project img {
+        filter: none;
+    }
+    
 }
 
 /* For Desktop */
@@ -655,36 +678,36 @@ section {
 
 
 /* Timeline styling */
-.timeline-container {
-    margin: var(--inline-spacing);
+#timeline{
+    container-type: inline-size;
+    container-name: timeline;
+}
+
+#timeline-title {
+    margin: 0;
+    padding: 1rem;
+    color: var(--black);
+    background-color: var(--primary);
+}
+
+.moments-container {
+    border: var(--border);
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    gap: var(--gap);
+    margin: var(--inline-spacing);
 }
 
-.timeline-container::-webkit-scrollbar {
-    width: 2em;
-    height: 2em;
+@container timeline (width <= 768px) {
+    .moments-container {
+        flex-direction: column;
+    }
+    
 }
-
-.timeline-container::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
-}
-
-.timeline-container::-webkit-scrollbar-track {
-    background-color: var(--secondary-background);
-}
-
-/* .timeline-container::-webkit-scrollbar-button:horizontal:start{
-    background-color: var(--primary);
-} */
 
 .moment {
     width: 100%;
     padding: 2em;
     background-color: var(--secondary-background);
+    border: var(--border);
 }
 
 .moment p {
