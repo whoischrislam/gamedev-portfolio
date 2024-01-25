@@ -247,7 +247,7 @@ header a, footer a {
 /* Header and footer styling */
 header {
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     background-color: var(--background);
 }
 
@@ -436,7 +436,7 @@ section {
     animation-delay: 0.2s;
 }
 
-/* #introduction > div > h1 {
+#introduction > div > h1 {
     opacity: 0;
     overflow: hidden;
 }
@@ -449,7 +449,7 @@ section {
 #introduction > div > h1:nth-child(2) {
     animation: type 1.5s ease-in 1 forwards;
     animation-delay: 4s;
-} */
+}
 
 @keyframes type {
     0% {
@@ -461,7 +461,7 @@ section {
     }
 }
 
-/* #loading {
+#loading {
     text-transform: uppercase;
     font-family: var(--header-font);
     font-size: var(--h2-size);
@@ -489,7 +489,7 @@ section {
 
 #skills {
     animation-delay: 5.4s;
-} */
+}
 
 /* Types of animations */
 @keyframes blink {
@@ -700,7 +700,7 @@ section {
     .moments-container {
         flex-direction: column;
     }
-    
+
 }
 
 .moment {
@@ -712,4 +712,16 @@ section {
 
 .moment p {
     font-size: var(--highlight-size);
+}
+
+
+/* Hire me section */
+
+.recommendation {
+    border: var(--border);
+    background-color: var(--secondary-background);
+    color:var(--primary);
+    padding: var(--container-padding);
+    min-width: 14em;
+    margin: var(--project-margins);    
 }
